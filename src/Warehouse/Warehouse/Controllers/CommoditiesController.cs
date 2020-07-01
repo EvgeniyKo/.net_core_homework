@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Warehouse.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("2.0")]
+    [ApiVersion("3.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class CommoditiesController : ControllerBase
     {
@@ -19,7 +21,7 @@ namespace Warehouse.Controllers
         }
 
         // GET: api/Commodities/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
